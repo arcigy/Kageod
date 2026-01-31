@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | KAGEOD</title>
+    <link rel="stylesheet" href="css/globals.css">
+    <style>
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+
+        .contact-info {
+            padding: 150px 4rem 4rem;
+            background: var(--color-bg-primary);
+        }
+
+        .contact-map {
+            position: relative;
+            background: #1a1e21;
+            overflow: hidden;
+        }
+
+        .contact-map img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.5) contrast(1.2);
+        }
+
+        .contact-card {
+            margin-bottom: 3rem;
+        }
+
+        .contact-card h3 {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p, .contact-card a {
+            font-size: 1.1rem;
+            color: var(--color-text-main);
+        }
+
+        form {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--color-border);
+            color: #fff;
+            font-family: inherit;
+            transition: var(--transition-fast);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: rgba(255,255,255,0.1);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">KA<span>GEOD</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="sluzby.html">Služby</a></li>
+                    <li><a href="o-nas.html">O nás</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a href="kontakt.html" class="btn btn-secondary">Nezáväzná ponuka</a>
+        </div>
+    </header>
+
+    <main class="contact-layout">
+        <div class="contact-info reveal-text">
+            <h1>Kontaktujte Nás</h1>
+            <p style="margin-bottom: 3rem; color: var(--color-text-muted);">
+                Radi sa s Vami stretneme osobne priamo na Vašom pozemku alebo v našej kancelárii vo Zvolene.
+            </p>
+
+            <div class="contact-card">
+                <h3>Telefón</h3>
+                <p><a href="tel:+421903567411">0903 567 411</a></p>
+                <p><a href="tel:+421455479783">045 5479 783</a></p>
+                <p><a href="tel:+421903806831">0903 806 831</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h3>E-mail</h3>
+                <p><a href="mailto:kageod@kageod.sk">kageod@kageod.sk</a></p>
+            </div>
+
+            <div class="contact-card">
+                <h3>Otváracie Hodiny</h3>
+                <p>Pondelok - Piatok: Podľa dohody</p>
+                <p style="font-size: 0.9rem; color: var(--color-text-muted);">Prosím, kontaktujte nás telefonicky vopred.</p>
+            </div>
+
+            <form action="#" method="POST">
+                <h3>Napíšte nám správu</h3>
+                <div class="form-group">
+                    <label for="name">Meno a Priezvisko</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Váš E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ako Vám môžeme pomôcť?</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Odoslať Správu</button>
+            </form>
+        </div>
+
+        <div class="contact-map">
+            <img src="assets/generated/contact_abstract_map.png" alt="Mapa Zvolen">
+            <div style="position: absolute; bottom: 2rem; left: 2rem; background: rgba(0,0,0,0.8); padding: 1rem; color: #fff;">
+                <p style="font-weight: bold;">Zvolen a široké okolie</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
