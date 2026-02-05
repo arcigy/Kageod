@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Nás | KAGEOD</title>
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <style>
+        .about-hero {
+            position: relative;
+            padding: 200px 0 100px;
+            background: #0A0A0A;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(230, 0, 0, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            text-shadow: none !important;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            filter: grayscale(0.2) brightness(0.9);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .about-img:hover img {
+            filter: grayscale(0) brightness(1);
+            transform: scale(1.02);
+            border-color: var(--color-primary);
+        }
+
+        .stats {
+            display: flex;
+            gap: 4rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        /* Restoration of atmospheric glows */
+        h1, h2, h3 {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        h1 span, .highlight {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 120px 0 60px;
+            }
+            .about-text h1 {
+                font-size: 2.2rem;
+            }
+            .about-content {
+                grid-template-columns: 1fr !important;
+                gap: 3rem;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                text-align: center;
+            }
+            .stat-item h3 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">KA<span>GEOD</span></div>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- CUSTOM SCROLLBAR -->
+    <div class="custom-scrollbar">
+        <div class="scrollbar-track"></div>
+        <div id="scroll-thumb" class="scrollbar-thumb"></div>
+    </div>
+
+
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">KA<span>GEOD</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="sluzby.html">Služby</a></li>
+                <li><a href="o-nas.html">O nás</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li class="mobile-only"><a href="kontakt.html" class="btn" style="margin-top: 1rem;">Nezáväzná ponuka</a></li>
+            </ul>
+        </nav>
+            <a href="kontakt.html" class="btn btn-secondary">Nezáväzná ponuka</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <div class="container about-content">
+                <div class="about-text reveal-text">
+                    <h1>Tradícia, presnosť a inovácie</h1>
+                    <p>
+                        Geodetickú kanceláriu Kageod sme vo Zvolene založili v roku 1990. 
+                        Už viac ako tri desaťročia poskytujeme klientom istotu v oblasti geodézie a kartografie.
+                    </p>
+                    <p>
+                        Spolupracujeme s jednotlivcami pri výstavbe rodinných domov, ale aj s veľkými stavebnými firmami 
+                        a verejnými inštitúciami. Neustále sledujeme legislatívne zmeny a investujeme do 
+                        najmodernejších technológií, aby sme Vám priniesli najvyššiu možnú kvalitu.
+                    </p>
+                    <p>
+                        Našou prioritou je profesionálny prístup, dodržiavanie termínov a riešenia na mieru. 
+                        Veríme, že kvalitná geodézia je základom každého úspešného projektu.
+                    </p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>30+</h3>
+                            <p>Rokov na trhu</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Spokojných klientov</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-img reveal-text" style="animation-delay: 0.2s">
+                    <img src="assets/site_images/about_handshake_office_40s.png" alt="Profesionálna dohoda - KAGEOD">
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 10rem 2rem; text-align: center;">
+            <h2 class="reveal-text" style="font-size: 3rem; margin-bottom: 4rem;">Náš Tím & Technológie</h2>
+            <div style="max-width: 900px; margin: 0 auto; background: rgba(255,255,255,0.02); padding: 4rem; border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                <p style="font-size: 1.2rem; line-height: 2; color: var(--color-text-muted);">
+                    Pracujeme s certifikovanými prístrojmi a najmodernejším softvérom. 
+                    <strong>Ing. Rastislav Kamenský</strong> a tím našich odborníkov sú zárukou, že Vaše projekty, 
+                    mapové podklady a vytýčenia budú v perfektnom súlade s realitou aj katastrálnymi záznamami. 
+                    Naša tradícia je postavená na presnosti, ktorej môžete dôverovať.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 1.8rem; margin-bottom: 1rem;">KA<span>GEOD</span></a>
+                <p style="color: var(--color-text-muted); line-height: 1.8;">
+                    Profesionálna geodetická kancelária so sídlom vo Zvolene. 
+                </p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Rýchle odkazy</h4>
+                <ul>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="sluzby.html">Služby</a></li>
+                    <li><a href="o-nas.html">O nás</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Služby</h4>
+                <ul>
+                    <li><a href="sluzby.html">Vytýčenie hraníc</a></li>
+                    <li><a href="sluzby.html">Geometrické plány</a></li>
+                    <li><a href="sluzby.html">Zameranie stavby</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li>📍 Zvolen a okolie</li>
+                    <li>📞 <a href="tel:+421903567411">+421 903 567 411</a></li>
+                    <li>✉️ <a href="mailto:kageod@kageod.sk">kageod@kageod.sk</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            &copy; 2026 KAGEOD s.r.o.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- CHATBOT WIDGET -->
+    <div class="chatbot-widget">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">KG</div>
+                    <div>
+                        <div class="chatbot-title">Kageod AI</div>
+                        <div style="font-size: 0.7rem; color: #00FF95; opacity: 0.8;">Online &bull; Aktívny</div>
+                    </div>
+                </div>
+                <div class="chatbot-close" id="chatbot-close">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <!-- Messages will be injected here via chatbot.js -->
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Napíšte správu...">
+                <button class="chatbot-send" id="chatbot-send">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="chatbot-launcher" id="chatbot-launcher">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><circle cx="7" cy="9" r="1.25"/><circle cx="12" cy="9" r="1.25"/><circle cx="17" cy="9" r="1.25"/>
+            </svg>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

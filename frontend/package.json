@@ -1,0 +1,14 @@
+{
+  "name": "kageod",
+  "version": "1.0.0",
+  "description": "Kageod - Kinetic Geodesy Website",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Služby | KAGEOD - Geodetické Práce</title>
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <style>
+        .page-header {
+            padding-top: 250px;
+            padding-bottom: 150px;
+            background: #000; /* Deep black base */
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .header-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.2);
+            transform: scale(1.05); /* Slight zoom for future animation */
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, #0A0A0A);
+            z-index: 2;
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-bottom: 10rem;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .service-detail:nth-child(even) {
+            direction: rtl; /* Flip order */
+        }
+
+        .service-detail:nth-child(even) .text-content {
+            direction: ltr; /* Reset text direction */
+        }
+
+        .service-img {
+            width: 100%;
+            height: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            filter: grayscale(0.2) brightness(0.8);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .service-img:hover {
+            transform: scale(1.05);
+            filter: grayscale(0) brightness(1);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 30px rgba(230, 0, 0, 0.2);
+        }
+
+        .text-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .text-content p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Restoration of atmospheric glows */
+        h1, h2, h3 {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+        }
+
+        h1 span, .highlight {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        h1, h2 {
+            /* Keep glow if necessary, or ensure it's clean */
+            text-shadow: 0 0 20px rgba(0,0,0,0.5); 
+        }
+
+        .text-content strong {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .page-header {
+                padding-top: 150px;
+                padding-bottom: 80px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .service-detail {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+                padding: 1.5rem;
+                margin-bottom: 4rem;
+                direction: ltr !important;
+            }
+            .service-detail:nth-child(even) {
+                direction: ltr !important;
+            }
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+            .text-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- PRELOADER -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">KA<span>GEOD</span></div>
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- CUSTOM SCROLLBAR -->
+    <div class="custom-scrollbar">
+        <div class="scrollbar-track"></div>
+        <div id="scroll-thumb" class="scrollbar-thumb"></div>
+    </div>
+
+
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">KA<span>GEOD</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="nav-links" id="nav-list">
+                <li><a href="index.html">Domov</a></li>
+                <li><a href="sluzby.html">Služby</a></li>
+                <li><a href="o-nas.html">O nás</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li class="mobile-only"><a href="kontakt.html" class="btn" style="margin-top: 1rem;">Nezáväzná ponuka</a></li>
+            </ul>
+        </nav>
+            <a href="kontakt.html" class="btn btn-secondary">Nezáväzná ponuka</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <!-- Background Image with Fade -->
+            <div class="header-bg-wrapper">
+                <img src="assets/site_images/services_hero.png" alt="Geodetické prístroje" class="header-bg">
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <h1 class="reveal-text">Naše Služby</h1>
+                <p class="reveal-text" style="color: var(--color-text-muted); margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Komplexné geodetické práce pre stavebníkov aj majiteľov pozemkov. 
+                    Presnosť je základom každého úspešného projektu.
+                </p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 6rem 2rem;">
+            
+            <!-- Service 1 -->
+            <div class="service-detail reveal-text">
+                <div class="img-wrapper">
+                    <img src="assets/site_images/service_pole_garden_fence.png" alt="Geodetická výtyčka - vytyčovanie nového plotu" class="service-img">
+                </div>
+                <div class="text-content">
+                    <h2>Vytýčenie hraníc pozemku</h2>
+                    <p>Pri stavbe plota, kúpe nehnuteľnosti alebo nejasnostiach ohľadom hraníc. Vytýčime zlomové body pozemku presne tak, ako sú uvedené v katastri nehnuteľností.</p>
+                    <p>Polohové a výškové vytýčenie je kľúčové pre dodržanie odstupových vzdialeností. Profesionálne vytýčenie Vám dáva istotu, že so svojím pozemkom môžete voľne nakladať bez obáv z budúcich sporov.</p>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-detail reveal-text">
+                <div class="img-wrapper">
+                    <img src="assets/site_images/service_building_finished.png" alt="Zameranie skutočného stavu stavby" class="service-img">
+                </div>
+                <div class="text-content">
+                    <h2>Zameranie stavby (Kolaudácia)</h2>
+                    <p>Bezprostredne po dokončení stavby je nutné zabezpečiť geometrický plán na zameranie skutočného stavu (adresný bod).</p>
+                    <p>Tento dokument je nevyhnutný pre kolaudačné konanie a zápis stavby do katastra. Zameriavame aj inžinierske siete (plynovody, vodovody, prípojky).</p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-detail reveal-text">
+                <div class="img-wrapper">
+                    <img src="assets/site_images/service_geometric_plan_office_cad.png" alt="Spracovanie geometrického plánu v CAD softvéri" class="service-img">
+                </div>
+                <div class="text-content">
+                    <h2>Geometrické plány & Zmeny</h2>
+                    <p>Chcete rozdeliť pozemok? Alebo sceliť parcely? Vypracujeme Vám geometrický plán, ktorý slúži ako podklad pre právne úkony a zápis do katastra.</p>
+                    <p>Riešime aj vecné bremená (právo prechodu) a majetkoprávne vysporiadanie pozemkov.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="text-align: center; padding: 10rem 2rem;">
+            <h2 style="font-size: 3rem; margin-bottom: 2rem;">Máte špecifickú požiadavku?</h2>
+            <p style="margin: 1.5rem auto 3.5rem; color: var(--color-text-muted); max-width: 700px; font-size: 1.2rem;">
+                Poskytujeme aj poradenskú činnosť a mapové podklady pre projekty. Ozvite sa nám a nájdeme riešenie pre Váš projekt.
+            </p>
+            <a href="kontakt.html" class="btn">Kontaktovať KAGEOD</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo" style="font-size: 1.8rem; margin-bottom: 1rem;">KA<span>GEOD</span></a>
+                <p style="color: var(--color-text-muted); line-height: 1.8;">
+                    Profesionálna geodetická kancelária so sídlom vo Zvolene. 
+                    Tradícia od roku 1990.
+                </p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Rýchle odkazy</h4>
+                <ul>
+                    <li><a href="index.html">Domov</a></li>
+                    <li><a href="sluzby.html">Služby</a></li>
+                    <li><a href="o-nas.html">O nás</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Služby</h4>
+                <ul>
+                    <li><a href="sluzby.html">Vytýčenie hraníc</a></li>
+                    <li><a href="sluzby.html">Geometrické plány</a></li>
+                    <li><a href="sluzby.html">Zameranie stavby</a></li>
+                    <li><a href="sluzby.html">Znalecké posudky</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <ul>
+                    <li>📍 Zvolen a okolie</li>
+                    <li>📞 <a href="tel:+421903567411">+421 903 567 411</a></li>
+                    <li>📞 <a href="tel:+421455479783">+421 45 5479 783</a></li>
+                    <li>✉️ <a href="mailto:kageod@kageod.sk">kageod@kageod.sk</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container copyright">
+            &copy; 2026 KAGEOD s.r.o. | Všetky práva vyhradené.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- CHATBOT WIDGET -->
+    <div class="chatbot-widget">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">KG</div>
+                    <div>
+                        <div class="chatbot-title">Kageod AI</div>
+                        <div style="font-size: 0.7rem; color: #00FF95; opacity: 0.8;">Online &bull; Aktívny</div>
+                    </div>
+                </div>
+                <div class="chatbot-close" id="chatbot-close">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                </div>
+            </div>
+            <div class="chatbot-messages">
+                <!-- Messages will be injected here via chatbot.js -->
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" class="chatbot-input" id="chatbot-input" placeholder="Napíšte správu...">
+                <button class="chatbot-send" id="chatbot-send">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="chatbot-launcher" id="chatbot-launcher">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><circle cx="7" cy="9" r="1.25"/><circle cx="12" cy="9" r="1.25"/><circle cx="17" cy="9" r="1.25"/>
+            </svg>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
