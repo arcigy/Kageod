@@ -8,7 +8,7 @@ class NanoBananaGenerator:
     """
     Tool for generating images using the Nano Banana API (Google GenAI SDK).
     """
-    def __init__(self, api_key="AIzaSyBGYdYD4UaE6WWSNirWMbCjbRoBWs5p8gU", api_url=None):
+    def __init__(self, api_key=None, api_url=None):
         self.api_key = api_key or os.getenv("NANO_BANANA_API_KEY")
         if self.api_key:
             self.client = genai.Client(api_key=self.api_key)
