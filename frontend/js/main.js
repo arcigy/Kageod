@@ -133,21 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         const isSamePage = normalize(targetUrl) === normalize(currentUrl);
 
-        // 0. Special smooth behavior for mobile same-page clicks (prevents flicker)
-        if (isTouchDevice && isSamePage) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
+        // Same-page clicks should never replay the intro animation.
+        if (isSamePage) {
             if (mobileMenuBtn && navList) {
                 mobileMenuBtn.classList.remove('active');
                 navList.classList.remove('active');
                 document.body.style.overflow = '';
             }
-            showPreloader();
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-                scrollTarget = scrollCurrent = 0;
-                hidePreloader();
-            }, 400); // Faster flash for same-page mobile
+
+            if (window.scrollY > 10) {
+                if (isTouchDevice) {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    isMoving = true;
+                    scrollTarget = 0;
+                }
+            }
             return;
         }
 
