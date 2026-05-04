@@ -91,10 +91,10 @@
   fill: #000;
 }
 
-/* Main Chat Window - Shrunk for a more compact look */
+/* Main Chat Window */
 .chatbot-window {
-  width: 320px;
-  height: 420px;
+  width: 420px;
+  height: 580px;
   background: rgba(20, 20, 20, 0.85);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -177,11 +177,11 @@
 /* Chat Messages */
 .chatbot-messages {
   flex: 1;
-  padding: 20px;
+  padding: 22px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
   scroll-behavior: smooth;
 }
 
@@ -206,13 +206,41 @@
 /* Initial Welcome Message & Dynamic Messages */
 .message-bot {
   background: rgba(255, 255, 255, 0.08);
-  padding: 12px 18px;
+  padding: 14px 18px;
   border-radius: 15px 15px 15px 2px;
-  max-width: 80%;
+  max-width: 88%;
   color: #eee;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.65;
+  word-break: break-word;
   animation: messageAppear 0.4s ease-out forwards;
+}
+
+.message-user {
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 15px 15px 2px 15px;
+}
+
+.chatbot-nav-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.chatbot-nav-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
 }
 
 @keyframes messageAppear {
@@ -266,7 +294,7 @@
 
 /* Chat Input Area */
 .chatbot-input-area {
-  padding: 20px;
+  padding: 18px 20px 20px;
   background: rgba(255, 255, 255, 0.03);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -278,7 +306,7 @@
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
-  padding: 10px 15px;
+  padding: 12px 15px;
   color: #fff;
   font-family: inherit;
   font-size: 0.9rem;
@@ -294,8 +322,8 @@
   background: #ffffff;
   border: none;
   border-radius: 10px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -316,11 +344,11 @@
 /* Mobile Responsive */
 @media (max-width: 480px) {
   .chatbot-window {
-    width: calc(100vw - 40px);
-    height: 450px;
+    width: min(calc(100vw - 24px), 420px);
+    height: min(72vh, 560px);
   }
   .chatbot-widget {
-    bottom: 20px;
-    right: 20px;
+    bottom: 12px;
+    right: 12px;
   }
 }

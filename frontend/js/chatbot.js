@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatbotInput = document.getElementById('chatbot-input');
     const chatbotSend = document.getElementById('chatbot-send');
     const chatbotWidget = document.querySelector('.chatbot-widget');
+    const msgContainer = document.querySelector('.chatbot-messages');
 
     // Reveal the widget exactly when preloader animation finishes
     const revealWidget = () => {
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(revealWidget, 1000);
 
     let isGreetingSent = false;
+    const NAVIGATION_LABELS = {
+        'index.html': 'Otvoriť domov',
+        'sluzby.html': 'Pozrieť služby',
+        'o-nas.html': 'Pozrieť o nás',
+        'kontakt.html': 'Pozrieť kontakt'
+    };
 
     // Toggle Chatbot Window
     const toggleChat = (force = null) => {
@@ -47,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulation of typing and message popup
     const addBotMessageWithDelay = (htmlContent, delay = 1500) => {
-        const msgContainer = document.querySelector('.chatbot-messages');
-        
         // 1. Show Typing Indicator
         const typingIndicator = document.createElement('div');
         typingIndicator.className = 'typing-indicator';
@@ -67,17 +72,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, delay);
     };
 
+    const addNavigationCard = (targetUrl) => {
+        const link = document.createElement('a');
+        link.className = 'chatbot-nav-link';
+        link.href = targetUrl;
+        link.textContent = NAVIGATION_LABELS[targetUrl] || 'Otvoriť stránku';
+        msgContainer.appendChild(link);
+        msgContainer.scrollTop = msgContainer.scrollHeight;
+    };
+
     const handleSend = async () => {
         const text = chatbotInput.value.trim();
         if (!text) return;
 
         // Add User message visually
-        const msgContainer = document.querySelector('.chatbot-messages');
         const userMsg = document.createElement('div');
         userMsg.className = 'message-bot';
-        userMsg.style.alignSelf = 'flex-end';
-        userMsg.style.background = 'rgba(255, 255, 255, 0.2)';
-        userMsg.style.borderRadius = '15px 15px 2px 15px';
+        userMsg.classList.add('message-user');
         userMsg.textContent = text;
         msgContainer.appendChild(userMsg);
 
@@ -111,11 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     replyText = replyText.replace(/\[NAVIGATE:.+?\]/, '').trim();
                     
                     addBotMessageWithDelay(replyText, 0);
-                    
-                    // Auto-redirect after a short delay so user can read the message
-                    setTimeout(() => {
-                        window.location.href = targetUrl;
-                    }, 800);
+                    setTimeout(() => addNavigationCard(targetUrl), 50);
                 } else {
                     addBotMessageWithDelay(replyText, 0);
                 }
