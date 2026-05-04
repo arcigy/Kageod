@@ -59,6 +59,10 @@ const PAGE_DATA = {
                 answer: 'Na stranke O nas KAGEOD uvadza viac ako 30 rokov na trhu a viac ako 1000 spokojnych klientov.'
             },
             {
+                keywords: ['ako dlho', 'kolko rokov', 'venujete', 'fungujete dlho', 'od kedy'],
+                answer: 'Podla informacii na webe sa KAGEOD venuje geodezii od roku 1990, teda viac ako 30 rokov.'
+            },
+            {
                 keywords: ['tim', 'rastislav kamensky', 'technologie', 'pristroje', 'softver'],
                 answer: 'KAGEOD uvadza, ze pracuje s certifikovanymi pristrojmi a najmodernejsim softverom. Na stranke je spomenuty Ing. Rastislav Kamensky a tim odbornikov ako zaruka presnosti a suladu s realitou aj katastralnymi zaznamami.'
             }
@@ -92,7 +96,7 @@ const INTENTS = [
     },
     {
         path: PAGE_DATA.about.path,
-        triggers: ['kto ste', 'co ste za firmu', 'o vas', 'o firme', 'historia firmy', 'ako dlho fungujete', 'kedy ste vznikli'],
+        triggers: ['kto ste', 'co ste za firmu', 'o vas', 'o firme', 'historia firmy', 'ako dlho fungujete', 'ako dlho sa tomu venujete', 'ako dlho sa tomu uz venujete', 'kolko rokov to robite', 'kolko rokov fungujete', 'kedy ste vznikli'],
         reply: PAGE_DATA.about.overview
     },
     {
@@ -102,7 +106,7 @@ const INTENTS = [
     }
 ];
 
-const FALLBACK_REPLY = `Na webe som k tomu nenasiel presnu informaciu. Prosim, kontaktujte kancelariu KAGEOD na ${CONTACT.phones[0]} alebo e-mailom ${CONTACT.email}. Ake mate este nejake otazky? Som tu pre vas.`;
+const FALLBACK_REPLY = `Prosim, kontaktujte kancelariu KAGEOD na ${CONTACT.phones[0]} alebo e-mailom ${CONTACT.email}. Radi vam poradia aj pri specifickej poziadavke. Ake mate este nejake otazky? Som tu pre vas.`;
 
 function normalizeText(value) {
     return (value || '')
@@ -177,7 +181,11 @@ function findTopicReply(message) {
         normalizedMessage.includes('firma') ||
         normalizedMessage.includes('historia') ||
         normalizedMessage.includes('vznik') ||
-        normalizedMessage.includes('o vas')
+        normalizedMessage.includes('o vas') ||
+        normalizedMessage.includes('ako dlho') ||
+        normalizedMessage.includes('kolko rokov') ||
+        normalizedMessage.includes('venujete') ||
+        normalizedMessage.includes('prax')
     ) {
         return buildReply(withClosing(PAGE_DATA.about.overview), PAGE_DATA.about.path);
     }
