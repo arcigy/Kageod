@@ -14,75 +14,95 @@ const CONTACT = {
     phones: ['+421 903 567 411', '+421 45 5479 783', '+421 903 806 831'],
     email: 'kageod@kageod.sk',
     location: 'Zvolen a okolie',
-    hours: 'Pondelok - Piatok: Podľa dohody. Prosím, kontaktujte nás telefonicky vopred.'
+    hours: 'Pondelok - Piatok: Podla dohody. Prosim, kontaktujte nas telefonicky vopred.'
 };
 
 const PAGE_DATA = {
     home: {
         path: 'index.html',
-        summary: 'KAGEOD poskytuje profesionálne geodetické služby vo Zvolene. Na webe sú predstavené hlavné služby, dlhoročná prax a kontakt na kanceláriu.'
+        summary: 'KAGEOD poskytuje profesionalne geodeticke sluzby vo Zvolene. Na webe su predstavene hlavne sluzby, dlhorocna prax a kontakt na kancelariu.'
     },
     services: {
         path: 'sluzby.html',
-        summary: 'KAGEOD poskytuje komplexné geodetické práce pre stavebníkov aj majiteľov pozemkov. Medzi hlavné služby patrí vytýčenie hraníc pozemku, zameranie stavby pre kolaudáciu a geometrické plány vrátane zmien a vecných bremien.',
+        summary: 'KAGEOD poskytuje komplexne geodeticke prace pre stavebnikov aj majitelov pozemkov.',
+        overview: 'KAGEOD ponuka najma vytýcenie hranic pozemku, zameranie stavby pre kolaudaciu, geometricke plany, riesenie vecnych bremien, majetkopravne vysporiadanie pozemkov, poradensku cinnost a mapove podklady pre projekty.',
         topics: [
             {
-                keywords: ['vytýčenie', 'vytýcenie', 'hraníc', 'hranic', 'pozemku', 'plot', 'zlomové body', 'zlomove body'],
-                answer: 'KAGEOD robí vytýčenie hraníc pozemku pri stavbe plota, kúpe nehnuteľnosti alebo pri nejasnostiach o hraniciach. Zlomové body vytýčia podľa údajov katastra nehnuteľností a polohové aj výškové vytýčenie pomáha dodržať odstupové vzdialenosti.'
+                keywords: ['vytýcenie', 'vytýcenie hranic', 'hranice pozemku', 'plot', 'zlomove body', 'pozemok'],
+                answer: 'KAGEOD robi vytýcenie hranic pozemku pri stavbe plota, kupe nehnutelnosti alebo pri nejasnostiach o hraniciach. Zlomove body vytýcia podla udajov katastra nehnutelnosti a polohove aj vyskove vytýcenie pomaha dodrzat odstupove vzdialenosti.'
             },
             {
-                keywords: ['zameranie stavby', 'kolaudácia', 'kolaudacia', 'skutočný stav', 'skutocny stav', 'adresný bod', 'adresny bod', 'inžinierske siete', 'inzinierske siete'],
-                answer: 'Po dokončení stavby KAGEOD zabezpečí geometrický plán na zameranie skutočného stavu stavby, ktorý je potrebný pre kolaudačné konanie a zápis stavby do katastra. Zameriavajú aj inžinierske siete, napríklad plynovody, vodovody a prípojky.'
+                keywords: ['zameranie stavby', 'kolaudacia', 'skutocny stav', 'adresny bod', 'inzinierske siete', 'pripojky'],
+                answer: 'Po dokonceni stavby KAGEOD zabezpeci geometricky plan na zameranie skutocneho stavu stavby, ktory je potrebny pre kolaudacne konanie a zapis stavby do katastra. Zameriavaju aj inzinierske siete, naprklad plynovody, vodovody a pripojky.'
             },
             {
-                keywords: ['geometrický plán', 'geometricky plan', 'geometrické plány', 'geometricke plany', 'rozdelenie pozemku', 'sceliť', 'scelit', 'vecné bremeno', 'vecne bremeno', 'majetkoprávne', 'majetkopravne'],
-                answer: 'KAGEOD vypracuje geometrický plán pri rozdelení alebo scelovaní parciel. Rieši aj vecné bremená, napríklad právo prechodu, a majetkoprávne vysporiadanie pozemkov.'
+                keywords: ['geometricky plan', 'geometricke plany', 'rozdelenie pozemku', 'scelenie parciel', 'vecne bremeno', 'majetkopravne'],
+                answer: 'KAGEOD vypracuje geometricky plan pri rozdeleni alebo scelovani parciel. Riesi aj vecne bremena, naprklad pravo prechodu, a majetkopravne vysporiadanie pozemkov.'
             },
             {
-                keywords: ['poradenstvo', 'poradenská činnosť', 'poradenska cinnost', 'mapové podklady', 'mapove podklady', 'špecifická požiadavka', 'specificka poziadavka'],
-                answer: 'Na stránke služieb KAGEOD uvádza aj poradenskú činnosť a mapové podklady pre projekty. Pri špecifickej požiadavke odporúčajú ozvať sa a nájsť riešenie pre konkrétny projekt.'
+                keywords: ['poradenstvo', 'poradenska cinnost', 'mapove podklady', 'specificka poziadavka'],
+                answer: 'Na stranke sluzieb KAGEOD uvadza aj poradensku cinnost a mapove podklady pre projekty. Pri specifickej poziadavke odporuca ozvat sa a najst riesenie pre konkretny projekt.'
             }
         ]
     },
     about: {
         path: 'o-nas.html',
-        summary: 'Geodetická kancelária KAGEOD bola založená vo Zvolene v roku 1990. Firma zdôrazňuje tradíciu, presnosť, inovácie, profesionálny prístup, dodržiavanie termínov a riešenia na mieru.',
+        summary: 'Geodeticka kancelaria KAGEOD bola zalozena vo Zvolene v roku 1990. Firma zdoraznuje tradiciu, presnost, inovacie, profesionalny pristup, dodrziavanie terminov a riesenia na mieru.',
+        overview: 'KAGEOD je geodeticka kancelaria zo Zvolena zalozena v roku 1990. Na webe zdoraznuje viac ako 30 rokov praxe, viac ako 1000 klientov, profesionalny pristup a pracu s modernymi technologiami.',
         topics: [
             {
-                keywords: ['o vás', 'o vas', 'firma', 'história', 'historia', 'tradícia', 'tradicia', 'rok 1990', 'založená', 'zalozena'],
-                answer: 'Podľa stránky O nás bola geodetická kancelária KAGEOD založená vo Zvolene v roku 1990. Už viac ako tri desaťročia poskytuje klientom istotu v oblasti geodézie a kartografie.'
+                keywords: ['o vas', 'o firme', 'historia', 'tradicia', 'rok 1990', 'zalozena'],
+                answer: 'Podla stranky O nas bola geodeticka kancelaria KAGEOD zalozena vo Zvolene v roku 1990. Uz viac ako tri desatrocia poskytuje klientom istotu v oblasti geodezie a kartografie.'
             },
             {
-                keywords: ['skúsenosti', 'skusenosti', 'roky', '30+', 'prax', 'klienti', '1000+'],
-                answer: 'Na stránke O nás KAGEOD uvádza viac ako 30 rokov na trhu a viac ako 1000 spokojných klientov.'
+                keywords: ['skusenosti', 'roky praxe', '30 rokov', '1000 klientov', 'prax'],
+                answer: 'Na stranke O nas KAGEOD uvadza viac ako 30 rokov na trhu a viac ako 1000 spokojnych klientov.'
             },
             {
-                keywords: ['tím', 'tim', 'rastislav', 'kamenský', 'kamensky', 'technológie', 'technologie', 'prístroje', 'pristroje', 'softvér', 'softver'],
-                answer: 'KAGEOD uvádza, že pracuje s certifikovanými prístrojmi a najmodernejším softvérom. Na stránke je spomenutý Ing. Rastislav Kamenský a tím odborníkov ako záruka presnosti a súladu s realitou aj katastrálnymi záznamami.'
+                keywords: ['tim', 'rastislav kamensky', 'technologie', 'pristroje', 'softver'],
+                answer: 'KAGEOD uvadza, ze pracuje s certifikovanymi pristrojmi a najmodernejsim softverom. Na stranke je spomenuty Ing. Rastislav Kamensky a tim odbornikov ako zaruka presnosti a suladu s realitou aj katastralnymi zaznamami.'
             }
         ]
     },
     contact: {
         path: 'kontakt.html',
-        summary: 'KAGEOD pôsobí vo Zvolene a okolí. Na kontaktnej stránke sú telefónne čísla, e-mail, informácia o osobnom stretnutí a otváracie hodiny podľa dohody.',
+        summary: 'KAGEOD posobi vo Zvolene a okoli. Na kontaktnej stranke su telefonne cisla, e-mail, informacia o osobnom stretnuti a otvaracie hodiny podla dohody.',
         topics: [
             {
-                keywords: ['kontakt', 'telefón', 'telefon', 'číslo', 'cislo', 'zavolať', 'zavolat', 'mail', 'e-mail', 'email'],
-                answer: `Kontakt na KAGEOD je ${CONTACT.phones.join(', ')} a e-mail ${CONTACT.email}. Na stránke je uvedené aj osobné stretnutie priamo na pozemku alebo v kancelárii vo Zvolene.`
+                keywords: ['kontakt', 'telefon', 'cislo', 'zavolat', 'mail', 'email'],
+                answer: `Kontakt na KAGEOD je ${CONTACT.phones.join(', ')} a e-mail ${CONTACT.email}. Na stranke je uvedene aj osobne stretnutie priamo na pozemku alebo v kancelarii vo Zvolene.`
             },
             {
-                keywords: ['otváracie hodiny', 'otvaracie hodiny', 'kedy máte otvorené', 'kedy mate otvorene', 'pondelok', 'piatok', 'dohody'],
-                answer: `Otváracie hodiny sú uvedené ako: ${CONTACT.hours}`
+                keywords: ['otvaracie hodiny', 'kedy mate otvorene', 'pondelok', 'piatok', 'dohoda'],
+                answer: `Otvaracie hodiny su uvedene takto: ${CONTACT.hours}`
             },
             {
-                keywords: ['kde', 'zvolen', 'okolie', 'kancelária', 'kancelaria', 'stretnutie'],
-                answer: 'KAGEOD pôsobí vo Zvolene a širokom okolí. Na kontaktnej stránke uvádza, že sa radi stretnú osobne priamo na pozemku alebo v kancelárii vo Zvolene.'
+                keywords: ['kde sidlite', 'zvolen', 'okolie', 'kancelaria', 'stretnutie'],
+                answer: 'KAGEOD posobi vo Zvolene a sirokom okoli. Na kontaktnej stranke uvadza, ze sa radi stretnu osobne priamo na pozemku alebo v kancelarii vo Zvolene.'
             }
         ]
     }
 };
 
-const FALLBACK_REPLY = `Na webe som k tomu nenašiel presnú informáciu. Prosím, kontaktujte kanceláriu KAGEOD na ${CONTACT.phones[0]} alebo e-mailom ${CONTACT.email}. Aké máte ešte nejaké otázky? Som tu pre vás.`;
+const INTENTS = [
+    {
+        path: PAGE_DATA.services.path,
+        triggers: ['co ponukas', 'co ponukate', 'co robite', 'ake sluzby', 'ake ponukate', 'ponuka', 'ponukas', 'ponukate', 'sluzby'],
+        reply: PAGE_DATA.services.overview
+    },
+    {
+        path: PAGE_DATA.about.path,
+        triggers: ['kto ste', 'co ste za firmu', 'o vas', 'o firme', 'historia firmy', 'ako dlho fungujete', 'kedy ste vznikli'],
+        reply: PAGE_DATA.about.overview
+    },
+    {
+        path: PAGE_DATA.contact.path,
+        triggers: ['ako vas kontaktovat', 'kontaktovat', 'mozem kontaktovat', 'kontakt', 'adresa', 'telefon', 'cislo', 'email', 'mail', 'kde sidlite'],
+        reply: PAGE_DATA.contact.summary
+    }
+];
+
+const FALLBACK_REPLY = `Na webe som k tomu nenasiel presnu informaciu. Prosim, kontaktujte kancelariu KAGEOD na ${CONTACT.phones[0]} alebo e-mailom ${CONTACT.email}. Ake mate este nejake otazky? Som tu pre vas.`;
 
 function normalizeText(value) {
     return (value || '')
@@ -95,7 +115,7 @@ function normalizeText(value) {
 }
 
 function withClosing(text) {
-    return `${text} Aké máte ešte nejaké otázky? Som tu pre vás.`;
+    return `${text} Ake mate este nejake otazky? Som tu pre vas.`;
 }
 
 function buildReply(text, targetPath) {
@@ -103,48 +123,80 @@ function buildReply(text, targetPath) {
     return targetPath ? `${trimmed} [NAVIGATE:${targetPath}]` : trimmed;
 }
 
-function keywordMatches(normalizedMessage, keyword) {
-    const normalizedKeyword = normalizeText(keyword);
+function phraseMatches(normalizedMessage, phrase) {
+    const normalizedPhrase = normalizeText(phrase);
+    if (!normalizedPhrase) return false;
+    if (normalizedMessage.includes(normalizedPhrase)) return true;
 
-    if (!normalizedKeyword) {
-        return false;
-    }
+    const phraseParts = normalizedPhrase.split(' ').filter((part) => part.length >= 2);
+    if (normalizedPhrase.includes(' ') && phraseParts.length < 2) return false;
+    return phraseParts.length > 0 && phraseParts.every((part) => normalizedMessage.includes(part));
+}
 
-    if (normalizedMessage.includes(normalizedKeyword)) {
-        return true;
-    }
+function stemMatches(normalizedMessage, term) {
+    const normalizedTerm = normalizeText(term);
+    if (!normalizedTerm) return false;
 
-    const keywordParts = normalizedKeyword.split(' ').filter((part) => part.length >= 4);
-    return keywordParts.length > 0 && keywordParts.every((part) => normalizedMessage.includes(part));
+    const words = normalizedMessage.split(' ').filter(Boolean);
+    const stem = normalizedTerm.slice(0, Math.max(4, normalizedTerm.length - 2));
+    return words.some((word) => word.startsWith(stem));
+}
+
+function matchesAny(normalizedMessage, phrases) {
+    return phrases.some((phrase) => phraseMatches(normalizedMessage, phrase) || stemMatches(normalizedMessage, phrase));
 }
 
 function findTopicReply(message) {
     const normalizedMessage = normalizeText(message);
     const pages = [PAGE_DATA.contact, PAGE_DATA.services, PAGE_DATA.about];
 
+    if (
+        normalizedMessage.includes('kontakt') ||
+        normalizedMessage.includes('telefon') ||
+        normalizedMessage.includes('email') ||
+        normalizedMessage.includes('mail') ||
+        normalizedMessage.includes('cislo') ||
+        normalizedMessage.includes('zavolat') ||
+        normalizedMessage.includes('kontaktovat')
+    ) {
+        return buildReply(withClosing(PAGE_DATA.contact.topics[0].answer), PAGE_DATA.contact.path);
+    }
+
+    if (
+        normalizedMessage.includes('sluz') ||
+        normalizedMessage.includes('ponuk') ||
+        normalizedMessage.includes('geometr') ||
+        normalizedMessage.includes('kolaud') ||
+        normalizedMessage.includes('pozem')
+    ) {
+        return buildReply(withClosing(PAGE_DATA.services.overview), PAGE_DATA.services.path);
+    }
+
+    if (
+        normalizedMessage.includes('kto ste') ||
+        normalizedMessage.includes('firma') ||
+        normalizedMessage.includes('historia') ||
+        normalizedMessage.includes('vznik') ||
+        normalizedMessage.includes('o vas')
+    ) {
+        return buildReply(withClosing(PAGE_DATA.about.overview), PAGE_DATA.about.path);
+    }
+
+    for (const intent of INTENTS) {
+        if (matchesAny(normalizedMessage, intent.triggers)) {
+            return buildReply(withClosing(intent.reply), intent.path);
+        }
+    }
+
     for (const page of pages) {
         for (const topic of page.topics) {
-            const hasMatch = topic.keywords.some((keyword) => keywordMatches(normalizedMessage, keyword));
-
-            if (hasMatch) {
+            if (matchesAny(normalizedMessage, topic.keywords)) {
                 return buildReply(withClosing(topic.answer), page.path);
             }
         }
     }
 
-    if (normalizedMessage.includes('sluzby') || normalizedMessage.includes('co robite') || normalizedMessage.includes('ponukate')) {
-        return buildReply(withClosing(PAGE_DATA.services.summary), PAGE_DATA.services.path);
-    }
-
-    if (normalizedMessage.includes('o vas') || normalizedMessage.includes('kto ste')) {
-        return buildReply(withClosing(PAGE_DATA.about.summary), PAGE_DATA.about.path);
-    }
-
-    if (normalizedMessage.includes('kontakt') || normalizedMessage.includes('adresa')) {
-        return buildReply(withClosing(PAGE_DATA.contact.summary), PAGE_DATA.contact.path);
-    }
-
-    if (normalizedMessage.includes('kageod') || normalizedMessage.includes('geodet')) {
+    if (normalizedMessage.includes('geodet') || normalizedMessage.includes('kageod')) {
         return buildReply(withClosing(PAGE_DATA.home.summary), PAGE_DATA.home.path);
     }
 

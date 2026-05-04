@@ -105,6 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const smoothScrollToTop = () => {
+        if (window.scrollY <= 10) return;
+
+        if (isTouchDevice) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        isMoving = false;
+        const scrollState = { y: window.scrollY };
+        gsap.to(scrollState, {
+            duration: 0.9,
+            ease: 'power3.out',
+            y: 0,
+            onUpdate: () => {
+                scrollCurrent = scrollState.y;
+                scrollTarget = scrollState.y;
+                window.scrollTo(0, scrollState.y);
+            },
+            onComplete: () => {
+                scrollCurrent = 0;
+                scrollTarget = 0;
+            }
+        });
+    };
+
     // --- Global Link Interceptor (Premium Page Transitions) ---
     window.addEventListener('click', (e) => {
         const link = e.target.closest('a');
@@ -141,14 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             }
 
-            if (window.scrollY > 10) {
-                if (isTouchDevice) {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    isMoving = true;
-                    scrollTarget = 0;
-                }
-            }
+            smoothScrollToTop();
             return;
         }
 
